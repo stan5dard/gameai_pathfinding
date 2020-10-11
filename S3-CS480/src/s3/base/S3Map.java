@@ -85,6 +85,7 @@ public class S3Map {
 		return layers[1].collidesWith(i_pe);
 	}
 	
+	// changed to get the position of specific point
 	public boolean anyLevelCollision(double x, double y) {
 		return layers[1].collidesWith(x, y);
 	}

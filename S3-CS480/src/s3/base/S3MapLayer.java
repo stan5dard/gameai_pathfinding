@@ -110,19 +110,11 @@ public class S3MapLayer {
 		return null;
 	}
 	
-	// changed
+	// changed to get the parameter of specific position
+	// if there is anything that collides with that position,
+	// collidesWidth will return true
 	public boolean collidesWith(double pos_x, double pos_y) {
-		int x = (int)pos_x;
-		int y = (int)pos_y;
-
-		for (int i = x; i < x + 1; i++)
-			for (int j = y; j < y + 1; j++)
-				if (i>=0 && j>=0 && i<map.length && j<map[i].length) {
-					if (!(map[i][j] instanceof WOGrass)) {
-						return true;
-					}
-				}
-		return false;
+		return !(map[(int)pos_x][(int)pos_y] instanceof WOGrass);
 	}
 
 	public S3PhysicalEntity nearestMapEntity(int x, int y,
